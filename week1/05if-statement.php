@@ -48,7 +48,7 @@
          * 
          * Double equals ( == ) will only check the value.
          */
-        $expression = true;
+        $expression = false;
         ?>
 
 
