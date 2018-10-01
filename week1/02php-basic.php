@@ -31,14 +31,18 @@ $title = 'my page title ' . $titles[$rand];
         
         <ul>   
         <?php 
+        /*
             for ($index = 0; $index < $myListLength; $index++) {
             echo "<li>" . $myList[$index] . "</li>";
         }
-         ?>
-        
-         <?php
+         */
             for ($i=0; $i<10; $i++) {
-                echo $i . "<br />";
+                if ($i %3 == 0) {
+                    echo "Fizz<br />";
+                } else {
+                     echo $i . "<br />";
+                }
+                
             }
 
         ?>
