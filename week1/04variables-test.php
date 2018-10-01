@@ -9,7 +9,8 @@
         
             $myvar = 'hello';
             $myvar2 = 'world';
-        
+            var_dump ($myvar);
+            exit;
         ?>
         
         <h1>

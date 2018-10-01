@@ -9,6 +9,11 @@
         $a = 0;
         $b = false;
         $value = 'foo';
+        
+        if ($a === $b) {
+            echo "they're the same";
+        }
+        exit;
         /*
          * The first set of if statements is recommended
          * 
