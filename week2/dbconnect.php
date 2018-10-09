@@ -7,6 +7,17 @@
 function getDatabase() {
     
         /* PHP script runs local or remote. Database server remote */
+        /* 
+            *********************************************************************************
+
+            BE SURE TO CHANGE THIS TO USE YOUR OWN dbname, user name and password! 
+                
+                dbname: se266_[firstname]
+                DB_USER:  se266_[firstname]
+	            DB_PASSWORD: studentidwithoutleadingzeroes
+            	
+           *********************************************************************************    
+        */
         $config = array(
             'DB_DNS' => 'mysql:host=ict.neit.edu;port=5500;dbname=se266_erik;',
             'DB_USER' => 'se266_erik',
