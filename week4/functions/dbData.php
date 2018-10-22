@@ -1,6 +1,5 @@
 <?php
 
-
 include_once __DIR__ . '/dbconnect.php';
 
 function getAllTestData(){
@@ -31,10 +30,18 @@ function getSearchData($column, $searchWord){
     return $results;
 }
 
+function getColumns () {
+    $columns = ["email", "phone", "zipcode", "owner"];
+    
+    return ($columns);
+}
 
-/*
- * $stmt = $db->prepare("SELECT * FROM test ORDER BY $column $order");
- */
+
+function getSortedData() {
+    
+}
+
+
 function searchTest($column, $search){
     
 }
