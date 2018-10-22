@@ -11,8 +11,8 @@
            include_once './functions/dbconnect.php';
                       
            $db = dbconnect();
-           $column = 'dataone';
-           $order = 'ASC'; //DESC
+           $column = 'datatwo';
+           $order = 'DESC'; //DESC
            $stmt = $db->prepare("SELECT * FROM test ORDER BY $column $order");
 
              $results = array();
