@@ -2,24 +2,33 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
-        
+        <title></title>        
     </head>
     <body>
         <?php
         
            include_once './functions/dbconnect.php';
-                      
+           include_once './functions/dbData.php';
+            
+          /* $results = getAllTestData(); */
+           
+           $column = 'datatwo';
+           $searchWord = 'two';
            $db = dbconnect();
-           $column = 'dataone';
-           $order = 'ASC'; //DESC
-           $stmt = $db->prepare("SELECT * FROM test ORDER BY $column $order");
+           
+            $stmt = $db->prepare("SELECT * FROM test WHERE $column LIKE :search");
 
-             $results = array();
-             if ($stmt->execute() && $stmt->rowCount() > 0) {
-                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-             }
-          
+            $search = '%'.$searchWord.'%';
+            $binds = array(
+                ":search" => $search
+            );
+            $results = array();
+            if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }
+            
+          //$results = searchTest($column, $search);
+            
         ?>
         
         
@@ -41,7 +50,6 @@
             <?php endforeach; ?>
             </tbody>
         </table>
-        
-       
+           
     </body>
 </html>

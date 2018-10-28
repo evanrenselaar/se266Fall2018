@@ -88,7 +88,7 @@ RUN THE SQL FILE BEFORE YOU CONTINUE WITH THIS DEMO
                     <td><?php echo $row['id']; ?></td>
                     <td><?php echo $row['dataone']; ?></td>
                     <td><?php echo $row['datatwo']; ?></td>            
-                    <td><?php echo  date("F j, Y, g:i a",strtotime($row['date'])); ?></td>
+                    <td><?php echo  date("D, d M Y",strtotime($row['date'])); ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>

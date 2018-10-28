@@ -53,7 +53,7 @@
             <br />
             Data two <input type="text" value="<?php echo $datatwo; ?>" name="datatwo" />
             <br />  
-            <input type="hidden" value="<?php echo $id; ?>" name="id" /> 
+            <input type="text" value="<?php echo $id; ?>" name="id" /> 
             <input type="submit" value="Update" />
         </form>
         
