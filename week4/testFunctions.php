@@ -3,10 +3,9 @@
 
 include_once './functions/dbData.php';
 
-/*
+
 $allResults = getAllTestData();
 $res = getSearchData ("phone", "128");
-*/
 
 $columns = getColumns();
 

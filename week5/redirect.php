@@ -1,4 +1,6 @@
+
+
 <?php
 
-    header('Location: fileRead.php');    
+    header('Location: session2.php');    
 ?>

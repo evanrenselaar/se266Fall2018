@@ -12,7 +12,7 @@
                       
            $db = dbconnect();
            $column = 'datatwo';
-           $order = 'DESC'; //DESC
+           $order = 'ASC'; //DESC
            $stmt = $db->prepare("SELECT * FROM test ORDER BY $column $order");
 
              $results = array();

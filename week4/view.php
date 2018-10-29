@@ -13,7 +13,7 @@
           /* $results = getAllTestData(); */
            
            $column = 'datatwo';
-           $searchWord = 'two';
+           $searchWord = 'data';
            $db = dbconnect();
            
             $stmt = $db->prepare("SELECT * FROM test WHERE $column LIKE :search");

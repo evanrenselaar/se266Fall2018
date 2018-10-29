@@ -5,7 +5,7 @@
     // note the difference between double and single quotes
     echo "$s<br />";
     echo '$s<br />';
-    
+   
     // time is displayed in either minutes or hours:minutes. Convert to minutes
     function getMinutes ($duration) {
         if (strpos ($duration, ":") > 0) {
