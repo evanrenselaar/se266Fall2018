@@ -1,21 +1,33 @@
 <?php
 
     include './functions/dbconnect.php';
-
+    include './functions/colorFunctions.php';
+    
     $db = dbconnect();
 
    
-    $stmt = $db->prepare("SELECT schoolState, COUNT(*) AS SchoolCount from schools
+    $stmt = $db->prepare("SELECT schoolState, COUNT(*) AS schoolCount from schools
                             GROUP BY schoolstate
                             ORDER BY COUNT(*) DESC LIMIT 10");
 
       
-    $results = array();
+    $schools = array();
     if ($stmt->execute() && $stmt->rowCount() > 0) {
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+   //echo json_encode($schools);
     
-    $results = json_encode($results);
     
-    echo $results;
+    $results = array();
+    $results[0] = array(); // list states
+    $results[1] = array (); // number of schools in each state
+    $results[2] = getRandomColorArray (10); // colors
+    foreach ($schools as $s) {
+        array_push($results[0], $s['schoolState']);
+        array_push($results[1], $s['schoolCount']);
+        
+        //code to be executed;
+    }
+     echo json_encode($results);
+   
 ?>
