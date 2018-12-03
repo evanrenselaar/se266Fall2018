@@ -4,20 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <title>School Count</title>
+
+  <title>Test AJAX</title>
 </head>
 <body>
-  <div class="container">
-    <canvas id="myChart"></canvas>
-  </div>
-
-  <script>
-   // Bar chart
-
-  </script>
+  
 </body>
 </html>
 
@@ -25,11 +18,17 @@
     
     $(document).ready(function () {
         
-        $.post ("test.php", {idx:1}, function (data) {
-            let colors = JSON.parse (data);
-            console.log (colors);
+       fetch('test.php?idx=1')
+        .then(function(response) {
+         console.log (response);
+          return response.text();
         })
-         
+        .then(function(text) {
+          console.log('Request successful', JSON.parse(text));
+        })
+        .catch(function(error) {
+          console.log('Request failed', error)
+        });
         
         
     });
